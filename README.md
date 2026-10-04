@@ -14,7 +14,7 @@
 | フェーズ | 内容 | 状態 |
 | --- | --- | --- |
 | 1 | コンソールアプリで SDK 初期化 → 1 回のプロンプト/応答を確認 | 完了 |
-| 2 | WPF の最小チャット UI(入力欄・送信ボタン・応答表示のみ) | 未着手 |
+| 2 | WPF の最小チャット UI(入力欄・送信ボタン・応答表示のみ) | 完了 |
 
 使用モデル: `qwen2.5-7b`(約 4.8〜6.3GB。GPU / CPU に応じたバリアントを SDK が自動選択します)。候補の比較は [ModelList.md](ModelList.md) を参照
 
@@ -44,7 +44,7 @@ dotnet run --project src/FoundryLocalChatDemo/src/FoundryLocalChatDemo.Console -
 # カタログのモデル一覧(サイズ順)を表示する
 dotnet run --project src/FoundryLocalChatDemo/src/FoundryLocalChatDemo.Console -- --list
 
-# フェーズ2: WPF アプリを起動(未実装)
+# フェーズ2: WPF アプリを起動(起動時にモデルを読み込み、「準備完了」と表示されたら質問を送れる)
 dotnet run --project src/FoundryLocalChatDemo/src/FoundryLocalChatDemo.Wpf
 ```
 
@@ -60,7 +60,7 @@ dotnet run --project src/FoundryLocalChatDemo/src/FoundryLocalChatDemo.Wpf
         ├── FoundryLocalChatDemo.slnx
         └── src/
             ├── FoundryLocalChatDemo.Console/  # フェーズ1: 疎通確認用コンソールアプリ
-            └── FoundryLocalChatDemo.Wpf/      # フェーズ2: 最小限のチャット UI(未作成)
+            └── FoundryLocalChatDemo.Wpf/      # フェーズ2: 最小限のチャット UI
 ```
 
 ## スコープ外

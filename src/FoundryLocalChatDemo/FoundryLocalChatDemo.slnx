@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/FoundryLocalChatDemo.Console/FoundryLocalChatDemo.Console.csproj" />
+    <Project Path="src/FoundryLocalChatDemo.Wpf/FoundryLocalChatDemo.Wpf.csproj" />
   </Folder>
 </Solution>

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <!--
+    Foundry Local はネイティブランタイムを含むため RuntimeIdentifier の指定が必要。
+    未指定だと restore と build で RID が食い違い NETSDK1047 になるので、実行マシンのアーキテクチャから決める。
+  -->
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' == ''">
+    <_OSArch>$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)</_OSArch>
+    <RuntimeIdentifier Condition="'$(_OSArch)' == 'X64'">win-x64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="'$(_OSArch)' == 'Arm64'">win-arm64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AI.Foundry.Local" Version="2.1.0" />
+  </ItemGroup>
+
+</Project>
