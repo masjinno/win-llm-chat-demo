@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/FoundryLocalChatDemo.Console/FoundryLocalChatDemo.Console.csproj" />
+  </Folder>
+</Solution>
